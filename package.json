@@ -1,0 +1,23 @@
+{
+  "name": "gradcountdown",
+  "version": "1.0.0",
+  "description": "twitter bot grad countdown",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yellowphone/gradcountdown.git"
+  },
+  "author": "Geo Min",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yellowphone/gradcountdown/issues"
+  },
+  "homepage": "https://github.com/yellowphone/gradcountdown#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
