@@ -5,22 +5,23 @@ var config = require('./config.js');
 var Twitter = require('twitter');
 var client = new Twitter(config);
 
-var j = schedule.scheduleJob('00 30 19 * * *', function() {
-    let date_ob = new Date();
-    console.log("test every day");
-    let date = ("0", date_ob.getDate())
-    let month = ("0" + (date_ob.getMonth() + 1))
-    console.log(month + "/" + date + " " + date_ob.getHours() + ":" + date_ob.getMinutes() + ":" + date_ob.getSeconds())
-    client.post('statuses/update', {status: "Good morning, and in case I don't see ya, good afternoon, good evening, and good night!"}, function(error, tweet, response) {
-        if (error) throw error;
-        console.log(tweet);
-        console.log(response);
-    })
-})
-
+// Just to say something nice when it is running
 app.get('/', (req, res) => {
     res.send("Hello, World!")
     res.end();
+})
+
+// Tweet API that the cron job will hit at a specific time
+app.get('/tweet', (req, res) => {
+    res.send("Tweet!!")
+    res.end();
+    // adjust your tweet here at status
+    client.post('statuses/update', {status: "Good morning, and in case I don't see ya, good afternoon, good evening, and good night!"}, function(error, tweet, response) {
+        if (error) throw error;
+        console.log(tweet);
+        // for debug help:
+        // console.log(response);
+    })
 })
 
 const PORT = process.env.PORT || 8080;
