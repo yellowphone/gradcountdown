@@ -23,7 +23,8 @@ module.exports = {
 - Go to https://developer.twitter.com/ , create a Twitter project and get your keys and secrets! 
 - REMEMBER: NEVER GIVE OUT YOUR KEYS AND SECRETS
 - Fill out config.js, and run `npm start`. 
-- Inside `app.js` in the `app.get('/tweet', (req, res))` GET request, you can config whatever tweet you want to send!
+To change what to tweet and how to tweet from an API:
+- Inside `app.js` in the `app.get('/tweet', (req, res))` GET request, you can config whatever tweet you want to send! Call localhost:8080/tweet and it should tweet to your account!
 
 For deploying to GCP App Engine and creating the schedule of tweeting:
 - Create a new App Engine project on GCP
@@ -40,5 +41,5 @@ cron:
 ~~~
 - Inside `cron.yaml`, you can adjust the schedule of your tweet. This cron job happens for me everyday at 8pm Eastern Time, and it hits the API/URL `/tweet`. You can find `/tweet` inside `app.js`.
 - run `gcloud app deploy`
-- run `gcloud app deploy cron.yaml`, click on the link and see your queued cron job.
+- run `gcloud app deploy cron.yaml`, click on the link after it deploys and see your queued cron job.
 - Deployed!

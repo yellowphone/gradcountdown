@@ -1,8 +1,8 @@
-#This cron job hits the API/tweet at everyday 20:00 Eastern Time
+#This cron job hits the API/tweet at every thursday 20:00 Eastern Time
 # the url is the API you want the cron job to hit
 # set the schedule to whatever time frequency you want
 cron:
   - description: daily tweet job
     url: /tweet
-    schedule: every day 20:00
+    schedule: every thursday 20:00
     timezone: US/Eastern
